@@ -3,7 +3,7 @@
 class AdvObject:
     def __init__(self, description=None):
         self._description = description
-        self._vocab = []
+        self._vocab = set()
 
     def set_description(self, description):
         if description is None:
@@ -13,8 +13,9 @@ class AdvObject:
     def get_description(self):
         return self._description
 
-    def add_vocab(self, vocab):
-        self._vocab.extend(vocab)
+    def add_vocab(self, *vocab):
+        for word in vocab:
+            self._vocab.add(word)
 
     def get_vocab(self):
         return self._vocab
