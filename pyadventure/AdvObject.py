@@ -1,0 +1,4 @@
+
+
+class AdvObject:
+    pass
