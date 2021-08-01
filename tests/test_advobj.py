@@ -17,10 +17,12 @@ class TestObject:
         self.greenBall.set_description("green ball")
         assert self.greenBall.get_description() == "green ball"
 
-    # TODO: Test adding vocab
+    # Test adding and getting vocab
+    def test_add_vocab(self):
+        self.greenBall.add_vocab(["green", "ball"])
+        assert self.greenBall.get_vocab() == ["green", "ball"]
 
-    # TODO: Test match vocab
 
-    # TODO: Add child object and parent object
+    # Add child object and parent object
 
-    # TODO: Find child with vocab
+    # Find child with vocab
