@@ -6,8 +6,17 @@ class AdvObject:
         self._vocab = set()
         self._children = []
         self._parent = None
+        self.location = False
+        self.surface = False
+        self.container = False
+        self.openable = False
+        self.open = False
+        self.lockable = False
+        self.locked = False
+        self.article = "a"
 
     def set_description(self, description):
+        # If a description generating routine has failed.
         if description is None:
             raise ValueError("AdvObject.set_description is None")
         self._description = description
@@ -32,6 +41,9 @@ class AdvObject:
         if child.get_parent() is not self:
             child.set_parent(self)
 
+    def get_children(self):
+        return self._children
+
     def get_parent(self):
         return self._parent
 
@@ -43,6 +55,9 @@ class AdvObject:
 
     def has_child(self, child):
         return child in self._children
+
+    def has_children(self):
+        return len(self._children) > 0
 
     def find(self, *words):
         result = []
